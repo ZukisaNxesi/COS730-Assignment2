@@ -24,10 +24,7 @@ COS730-Assignment2/
 │   ├── benchmark.py        # Task 6: Empirical evaluation script
 │   └── README.md           # Task 4 & 5 explanation
 │
-└── README.md               ← This file
-```
-
----
+└── README.md               
 
 ## Task Summary
 

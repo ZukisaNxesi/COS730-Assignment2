@@ -54,8 +54,3 @@ if __name__ == "__main__":
 
     print(json.dumps({"baseline": base_metrics, "optimised": opt_metrics}, indent=2))
 
-    # Save for report generation
-    import pickle
-    with open("/home/claude/metrics.pkl", "wb") as f:
-        pickle.dump({"baseline": base_metrics, "optimised": opt_metrics}, f)
-    print("Metrics saved to /home/claude/metrics.pkl")

@@ -35,7 +35,7 @@ class ReviewerRecord:
 class Validator:
     """Diagram message: validateFormat(data)"""
 
-    def validateFormat(self, data: dict) -> str:          # → valid / invalid
+    def validateFormat(self, data: dict) -> str:          #  valid / invalid
         required_fields = ["title", "author", "content"]
         for field in required_fields:
             if field not in data or not data[field]:
@@ -60,13 +60,13 @@ class Database:
             ReviewerRecord(5, ["Topic C"],   2),
         ]
 
-    def saveSubmission(self, data: dict) -> str:          # → confirmation
+    def saveSubmission(self, data: dict) -> str:          #  confirmation
         sid = random.randint(1000, 9999)
         self._submissions[sid] = data
         time.sleep(0.002)                                  # simulate I/O
         return f"SAVED:{sid}"
 
-    def fetchReviewers(self) -> list[ReviewerRecord]:     # → reviewerList
+    def fetchReviewers(self) -> list[ReviewerRecord]:     #  reviewerList
         time.sleep(0.002)                                  # simulate I/O
         return list(self._reviewers)
 
@@ -232,7 +232,7 @@ class UI:
 
     def submitResearchOutput(self, data: dict):
         # Researcher → UI: submitResearchOutput(data)
-        return self.controller.submit(data)               # UI → SubmissionController
+        return self.controller.submit(data)               # UI  SubmissionController
 
 
 # ──────────────────────────────────────────────
@@ -262,7 +262,7 @@ class SubmissionController:
 
         # ── validateFormat(data) ──────────────────────────────
         self.call_count += 1
-        validity = self.validator.validateFormat(data)     # Diagram: → Validator
+        validity = self.validator.validateFormat(data)     # Diagram:  Validator
 
         # ── alt [invalid] ────────────────────────────────────
         if validity == "invalid":
@@ -276,7 +276,7 @@ class SubmissionController:
         # saveSubmission(data)
         self.call_count += 1
         submission = Submission(data)
-        confirmation = self.database.saveSubmission(data)  # Diagram: → Database
+        confirmation = self.database.saveSubmission(data)  # Diagram:  Database
 
         # getAvailableReviewers()
         self.call_count += 1
@@ -334,7 +334,7 @@ class SubmissionController:
         self.call_count += 1
         notification = self.notification_service.sendNotification(outcome, submission)
 
-        # sendNotification() → Researcher
+        # sendNotification() Researcher
         self.call_count += 1
 
         result["outcome"]       = outcome
