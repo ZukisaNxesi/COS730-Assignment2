@@ -93,7 +93,7 @@ This runs **200 iterations** of both systems and prints a JSON comparison of:
 
 | Metric | Baseline | Optimised | Improvement |
 |--------|----------|-----------|-------------|
-| Avg Execution Time | 20.78 ms | 8.73 ms | **2.38× faster** |
+| Avg Execution Time | 20.78 ms | 11.92 ms | **2.56× faster** |
 | Method Calls / Submission | 22 | 7 | **68% reduction** |
 | Controller Cyclomatic Complexity | 6 | 4 | **−33%** |
 | Controller Efferent Coupling | 5 | 4 | **−1 dependency** |
